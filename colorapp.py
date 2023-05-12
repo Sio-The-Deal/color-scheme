@@ -44,3 +44,20 @@ def get_colors(msg):
 
     colors = json.loads(response["choices"][0]["text"])
     return colors
+
+
+@app.route("/colorscheme", methods=["POST"])
+def prompt_to_colorscheme():
+    query = request.form.get("query")
+    colors = get_colors(query)
+    return {"colors": colors}
+    
+
+@app.route("/", methods=['GET'])
+def index():
+    return render_template("index.html")
+
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
