@@ -33,3 +33,14 @@ def get_colors(msg):
     Q: Convert the following verbal description of a color scheme into a list of colors: {msg} 
     A:
     """
+    # tokens count: 1 token ~= 4 chars in English. 1 token ~= ¾ words. 100 tokens ~= 75 words.
+# for davici models ,they cost 	$0.1200 / 1K tokens or 12 cents for approx every 750 words
+# for different models visit https://platform.openai.com/docs/models/gpt-3-5
+    response = openai.Completion.create(
+        prompt=prompt,
+        model="text-davinci-003",
+        max_tokens=100,   
+    )
+
+    colors = json.loads(response["choices"][0]["text"])
+    return colors
