@@ -1,0 +1,12 @@
+To run this app please install the following:
+flask
+dotenv
+python
+openai
+
+create a .env file with openai api key
+OPENAI_API_KEY = 12334...
+
+Run this in the terminal in the directory where the coorapp.py is located:
+set FLASK_APP=colorapp.py
+flask run
