@@ -4,7 +4,7 @@ dotenv
 python
 openai
 
-create a .env file with openai api key
+create a .env file with openai api key:
 OPENAI_API_KEY = 12334...
 
 Run this in the terminal in the directory where the coorapp.py is located:
